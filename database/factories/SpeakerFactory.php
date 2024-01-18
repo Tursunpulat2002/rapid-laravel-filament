@@ -2,9 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 use App\Models\Speaker;
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SpeakerFactory extends Factory
 {
@@ -24,6 +23,7 @@ class SpeakerFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
             'bio' => $this->faker->text(),
+            'qualifications' => [],
             'twitter_handle' => $this->faker->word(),
         ];
     }
