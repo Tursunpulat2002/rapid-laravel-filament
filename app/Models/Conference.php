@@ -18,7 +18,8 @@ use Illuminate\Database\{Eloquent\Builder,
     Eloquent\Factories\HasFactory,
     Eloquent\Model,
     Eloquent\Relations\BelongsTo,
-    Eloquent\Relations\BelongsToMany};
+    Eloquent\Relations\BelongsToMany,
+    Eloquent\Relations\HasMany};
 
 class Conference extends Model
 {
@@ -119,5 +120,10 @@ class Conference extends Model
     public function talks(): BelongsToMany
     {
         return $this->belongsToMany(Talk::class);
+    }
+
+    public function attendees(): HasMany
+    {
+        return $this->hasMany(Attendee::class);
     }
 }
