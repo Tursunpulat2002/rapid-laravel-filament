@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
+//    implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -42,4 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+//    public function canAccessPanel(Panel $panel): bool
+//    {
+//        // TODO: Implement canAccessPanel() method.
+////        $panel->getId(); can use to let certain users go to one panel and another to some other panel
+//    }
 }
